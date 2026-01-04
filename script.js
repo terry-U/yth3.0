@@ -1,7 +1,8 @@
 /**
  * 유태형 3.0
  * 
- * 최근 수정: 2026-01-03
+ * 최근 수정: 2026-01-04
+ * - Lenis 스무스 스크롤 제거 (성능 개선)
  */
 
 (function() {
@@ -35,37 +36,9 @@
         }
     }
 
-    /**
-     * Lenis 스무스 스크롤 초기화
-     */
-    function initLenis() {
-        if (typeof Lenis === 'undefined') {
-            console.warn('[Lenis] 라이브러리 로딩 대기 중...');
-            setTimeout(initLenis, 100);
-            return;
-        }
-
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            orientation: 'vertical',
-            smoothWheel: true
-        });
-
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-
-        requestAnimationFrame(raf);
-        window.lenis = lenis;
-        console.log('[Lenis] 스무스 스크롤 초기화 완료');
-    }
-
     // Initialize
     document.addEventListener('DOMContentLoaded', () => {
         new ScrollReveal();
-        initLenis();
 
         console.log('%c유태형 3.0', 'font-size: 24px; font-weight: 900; color: #fff;');
         console.log('%c인류를 더 지혜롭게', 'font-size: 12px; color: #888;');

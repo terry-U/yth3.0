@@ -231,7 +231,6 @@ a { color: inherit; text-decoration: none; }
     padding: 0;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     display: flex;
     align-items: center;
 }
