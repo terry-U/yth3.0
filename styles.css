@@ -115,9 +115,10 @@ a { color: inherit; text-decoration: none; }
    Hero
    ============================================ */
 .hero-section {
-    min-height: calc(100vh - var(--glass-size) * 2);
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
@@ -136,6 +137,13 @@ a { color: inherit; text-decoration: none; }
     line-height: 1.05;
     letter-spacing: -0.03em;
     margin-bottom: var(--space-lg);
+}
+
+.hero-title--name {
+    font-size: clamp(4rem, 18vw, 12rem);
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    margin: 0;
 }
 
 .hero-title .line { display: block; }
